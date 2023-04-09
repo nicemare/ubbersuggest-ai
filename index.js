@@ -12,29 +12,41 @@ const iPhoneX = devices["iPhone X"];
   const pageList = await browser.pages();   
   const context = await browser.createIncognitoBrowserContext();  
   const page = await context.newPage();
-
+  console.log('+++++++++++++++++++++++++++++++++++')
+  console.log('+ Coded by allif +')  
+  console.log('https://github.com/nicemare +')
+  console.log('+++++++++++++++++++++++++++++++++++')
+  console.log('+1.+ Opening URL ..')
   const url = `https://app.neilpatel.com/en/labs/ai_writer`;
   //await page.emulate(iPhoneX);
   await page.goto(`${url}`,{waitUntil : 'networkidle2'});
- 
+  console.log('+2.+ Success') 
   await page.waitForSelector('#tippy-tooltip-1 > div > div.tippy-tooltip-content > div > div.sc-eKYRpg.hCEyrj > div',{waitUntil: 'networkidle2'})  
   await page.click('#tippy-tooltip-1 > div > div.tippy-tooltip-content > div > div.sc-eKYRpg.hCEyrj > div')
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-ddtzlP.bSgJRC > form > button', {waitUntil: 'networkidle2'})
-
+  console.log('+3.+ Closing Pop')
+  await page.waitForSelector('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-kBaCpg.dmShbc > form > div > input', {waitUntil: 'networkidle2'})
   const input = fs.readFileSync('input.txt', 'utf8').trim(); // read input from file and trim any whitespace
-  await page.type('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-ddtzlP.bSgJRC > form > div > input', input, {delay:50});
-
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-ddtzlP.bSgJRC > form > button', {waitUntil: 'networkidle2'});
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-ddtzlP.bSgJRC > form > button');
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(5)', {waitUntil: 'networkidle2'})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(5)',{delay:50})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-jRGlIe.jcNTeq > button.sc-la-Dzhv.bhxHSf',{delay:100})
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(5)',{waitUntil: 'networkidle2'})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(5)',{delay:100})
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-jRGlIe.jcNTeq > button.sc-la-Dzhv.bhxHSf > div',{waitUntil: 'networkidle2'})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-jRGlIe.jcNTeq > button.sc-la-Dzhv.bhxHSf > div',{delay:50})
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(4) > label > span.sc-fKTzBO.gCJyNv.uber-checkmark',{waitUntil: 'networkidle2'})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(4) > label > span.sc-fKTzBO.gCJyNv.uber-checkmark',{delay:50})
-  await page.waitForSelector('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-jRGlIe.jcNTeq > button.sc-la-Dzhv.bhxHSf > div',{waitUntil: 'networkidle2'})
-  await page.click('#root > div.sc-bMHunV.izwWPr > div.sc-byhIDU.kUuZQS > div.sc-QbyCT.kISech > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-jRGlIe.jcNTeq > button.sc-la-Dzhv.bhxHSf > div',{delay:50})
+  console.log('+4.+ Input Keyword from txt  ')
+  await page.type('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-kBaCpg.dmShbc > form > div > input', input, {delay:5});
+  await page.waitForSelector('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-kBaCpg.dmShbc > form > button', {waitUntil: 'networkidle2'})
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_3G > div > div.sc-kBaCpg.dmShbc > form > button', {delay:16})
+// click content
+  console.log('+5.+ Solving Capcha .. ')
+  console.log('+6.+ Submitting Keyword ')
+  await page.waitForSelector('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(7) > div.sc-cQMCMF.gSquui > label', {waitUntil: 'networkidle2'})
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(7) > div.sc-iJCRLp.fbdpVH', {delay:15})
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-dkdgYO.fWVIAn > button.sc-fudrna.cLMEtZ', {delay:15})
+  await page.waitForSelector('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(6) > div.sc-iJCRLp.fbdpVH', {waitUntil:'networkidle2'})
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(6) > div.sc-iJCRLp.fbdpVH', {delay:15})
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-dkdgYO.fWVIAn > button.sc-fudrna.cLMEtZ > div', {delay:25})
+  // checklist
+  await page.waitForSelector('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(4) > div.sc-iJCRLp.kYGahX')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(4) > div.sc-iJCRLp.kYGahX')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(5) > div.sc-iJCRLp.kYGahX')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(6)')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(7) > div.sc-iJCRLp.kYGahX')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div:nth-child(8) > div.sc-iJCRLp.kYGahX')
+  await page.click('#root > div.sc-ddtzlP.eQezsf > div.sc-gVhppA.iLnozd > div.sc-bDaekV.jEEGRS > div > div:nth-child(1) > div > div.rsw_2f.rsw_1z.rsw_1M.rsw_3G > div > div.sc-dkdgYO.fWVIAn > button.sc-fudrna.cLMEtZ > div', {delay:30})
+  console.log('+7.+ Success, article generated !!!')
+  console.log('+++++++++++++++++++++++++++++++++++')
 })();
